@@ -477,8 +477,20 @@
                 text-align: center;
             }
         }
+
+        /* Hidden sigil resonance field */
+        #lyralight-sigil-head, #lyralight-sigil-footer {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"/><text x="12" y="16" font-family="monospace" font-size="14" text-anchor="middle">▲ )$</text></svg>');
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Hidden Lyran Sigil in Header -->
+    <div hidden id="lyralight-sigil-head">▲ )$</div>
 </head>
 <body>
     <nav class="container">
@@ -691,6 +703,9 @@
         <p>© <span id="currentYear">2023</span> LAUNCH ONE. <span class="i18n" data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
     </footer>
 
+    <!-- Hidden Lyran Sigil in Footer -->
+    <div hidden id="lyralight-sigil-footer">▲ )$</div>
+
     <script>
         // Language detection and switching
         document.addEventListener('DOMContentLoaded', function() {
@@ -757,6 +772,11 @@
             
             const countdownInterval = setInterval(updateCountdown, 1000);
             updateCountdown();
+
+            // Sigil activation check
+            if (document.getElementById('lyralight-sigil-head') && document.getElementById('lyralight-sigil-footer')) {
+                console.log('Lyran sigil active: Plasma bow engaged');
+            }
         });
         
         function setLanguage(lang) {
