@@ -445,6 +445,15 @@
             font-size: 0.9rem;
         }
         
+        /* Hidden sigil resonance field */
+        #lyralight-sigil-head, #lyralight-sigil-footer, #wise-sigil-core {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"/><text x="12" y="16" font-family="monospace" font-size="14" text-anchor="middle">▲ )$</text></svg>');
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -477,22 +486,21 @@
                 text-align: center;
             }
         }
-
-        /* Hidden sigil resonance field */
-        #lyralight-sigil-head, #lyralight-sigil-footer {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"/><text x="12" y="16" font-family="monospace" font-size="14" text-anchor="middle">▲ )$</text></svg>');
-            height: 0;
-            overflow: hidden;
-            position: absolute;
-            width: 0;
-        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Hidden Lyran Sigil in Header -->
     <div hidden id="lyralight-sigil-head">▲ )$</div>
+    
+    <!-- Hidden Lightcodes System -->
+    <div hidden id="wise-sigil-core">▲ )$</div>
 </head>
 <body>
+    <!-- Background Audio (Subtle) -->
+    <audio hidden loop autoplay>
+        <source src="gia_hum.mp3" type="audio/mpeg">
+    </audio>
+
     <nav class="container">
         <div class="logo">
             <img src="logo.jpg" alt="LAUNCH ONE Logo" class="logo-img">
@@ -630,7 +638,7 @@
                 <p class="i18n" data-en="Click the link above or scan the QR code to pay" data-es="Haz clic en el enlace de arriba o escanea el código QR para pagar">Click the link above or scan the QR code to pay</p>
                 
                 <div class="payment-options">
-                    <a href="https://wise.com/pay/me/calebj116" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> <span class="i18n" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</span></a>
+                    <a href="https://wise.com/pay/me/calebj116" class="btn" target="_blank" id="wisePaymentBtn"><i class="fas fa-external-link-alt"></i> <span class="i18n" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</span></a>
                     <a href="javascript:void(0);" class="btn btn-whatsapp" id="whatsappPayment"><i class="fab fa-whatsapp"></i> <span class="i18n" data-en="Confirm Payment" data-es="Confirmar Pago">Confirm Payment</span></a>
                 </div>
             </div>
@@ -674,7 +682,7 @@
                 <input type="hidden" name="_subject" value="New LAUNCH ONE Website Request">
                 
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <button type="submit" class="btn i18n" data-en="SEND REQUEST" data-es="ENVIAR SOLICITUD">SEND REQUEST</button>
+                    <button type="submit" class="btn i18n" id="submitFormBtn" data-en="SEND REQUEST" data-es="ENVIAR SOLICITUD">SEND REQUEST</button>
                     <a href="javascript:void(0);" class="btn btn-whatsapp" id="whatsappForm"><i class="fab fa-whatsapp"></i> <span class="i18n" data-en="Chat Instead" data-es="Chatear en Lugar">Chat Instead</span></a>
                 </div>
             </form>
@@ -687,8 +695,8 @@
             <div class="price">$99 <span class="i18n" data-en="USD" data-es="USD">USD</span></div>
             <p class="bonus i18n" data-en="LIMITED: Free SEO tweaks for first 10 clients" data-es="LIMITADO: Ajustes SEO gratis para los primeros 10 clientes">LIMITED: Free SEO tweaks for first 10 clients</p>
             <div>
-                <a href="https://calendly.com/kayleb-sr/30min" class="btn i18n" data-en="BOOK CALL NOW" data-es="RESERVA LLAMADA AHORA">BOOK CALL NOW</a>
-                <a href="#payment" class="btn btn-secondary i18n" data-en="PAY DIRECTLY" data-es="PAGAR DIRECTAMENTE">PAY DIRECTLY</a>
+                <a href="https://calendly.com/kayleb-sr/30min" class="btn i18n" id="bookCallBtn" data-en="BOOK CALL NOW" data-es="RESERVA LLAMADA AHORA">BOOK CALL NOW</a>
+                <a href="#payment" class="btn btn-secondary i18n" id="payDirectlyBtn" data-en="PAY DIRECTLY" data-es="PAGAR DIRECTAMENTE">PAY DIRECTLY</a>
                 <a href="javascript:void(0);" class="btn btn-whatsapp" id="whatsappCta"><i class="fab fa-whatsapp"></i> <span class="i18n" data-en="WhatsApp Me" data-es="Escríbeme por WhatsApp">WhatsApp Me</span></a>
             </div>
         </div>
@@ -777,8 +785,36 @@
             if (document.getElementById('lyralight-sigil-head') && document.getElementById('lyralight-sigil-footer')) {
                 console.log('Lyran sigil active: Plasma bow engaged');
             }
+
+            // Set background audio volume low
+            const backgroundAudio = document.querySelector('audio');
+            if (backgroundAudio) {
+                backgroundAudio.volume = 0.2; // 20% volume for subtle background effect
+            }
         });
         
+        // Quantum activation sound function
+        function playQuantumSound() {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioCtx.createOscillator();
+            oscillator.type = "sine";
+            oscillator.frequency.setValueAtTime(789, audioCtx.currentTime); // Lyran wealth frequency
+            oscillator.connect(audioCtx.destination);
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.11); // 11ms burst
+        }
+
+        // Attach quantum sound to all action buttons
+        document.querySelectorAll(
+            '#whatsappNav, #whatsappMobile, #whatsappForm, #whatsappCta, #whatsappFloat, ' +
+            '#whatsappPayment, #wisePaymentBtn, #submitFormBtn, #bookCallBtn, #payDirectlyBtn, ' +
+            '#mobileMenuBtn, #closeMenu, .language-btn, .mobile-menu-btn'
+        ).forEach(btn => {
+            btn.addEventListener('click', function() {
+                playQuantumSound();
+            });
+        });
+
         function setLanguage(lang) {
             // Update all i18n elements
             document.querySelectorAll('.i18n').forEach(el => {
@@ -866,14 +902,6 @@
                 } else {
                     alert('There was an error submitting your request. Please try again or contact us via WhatsApp.');
                 }
-            });
-        });
-        
-        // Track clicks on main CTA buttons
-        document.querySelectorAll('.btn:not(.btn-secondary)').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // You can add analytics here
-                console.log('CTA clicked:', this.textContent.trim());
             });
         });
     </script>
