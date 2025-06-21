@@ -14,7 +14,7 @@
     <meta property="og:description" content="Untouchable websites for lawyers, real estate moguls & luxury brands. Starting at $3,000.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://launchone.com">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
     
     <style>
         :root {
@@ -75,6 +75,1134 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
+        }
+        
+        button, input, textarea, select {
+            font: inherit;
+            border: none;
+            background: transparent;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        /* Components */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--light);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-0.5rem);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            color: var(--primary);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            color: var(--primary);
+        }
+        
+        .logo-img {
+            height: 2.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            background: linear-gradient(135deg, #121212 0%, #1E1E1E 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-image {
+            border-radius: 0.75rem;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--primary);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 700px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            opacity: 0.8;
+        }
+        
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            margin: 1.5rem 0;
+        }
+        
+        .pricing-features {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.75rem;
+            position: relative;
+        }
+        
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.375rem;
+            color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23D4AF37' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 16px 12px;
+            padding-right: 2.5rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            max-width: 600px;
+            margin: 3rem auto;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .guarantee-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--whatsapp);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 90;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-weight: 500;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--dark);
+            padding: 2rem;
+            z-index: 200;
+            transform: translateX(100%);
+            transition: var(--transition-slow);
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .close-menu {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+        }
+        
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        /* Language Toggle */
+        .language-toggle {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .language-options {
+            position: absolute;
+            right: 0;
+            background: var(--dark);
+            border-radius: 0.25rem;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: none;
+            z-index: 100;
+            min-width: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .language-options.show {
+            display: block;
+        }
+        
+        .language-option {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            color: var(--light);
+            transition: var(--transition);
+        }
+        
+        .language-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .guarantee {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .form-actions .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 1rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mt-5 { margin-top: 2rem; }
+        .mt-6 { margin-top: 3rem; }
+        
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 1rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-5 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 3rem; }
+        
+        /* Hidden elements */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="https://via.placeholder.com/150x50?text=LAUNCH+ONE" alt="LaunchOne Logo" class="logo-img">
+                LAUNCH ONE
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#features" class="nav-link" data-en="Features" data-es="Características">Features</a>
+                <a href="#testimonials" class="nav-link" data-en="Results" data-es="Resultados">Results</a>
+                <a href="#pricing" class="nav-link" data-en="Pricing" data-es="Precios">Pricing</a>
+                <a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>
+                <div class="language-toggle">
+                    <button class="language-btn" id="languageBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLanguage">EN</span>
+                    </button>
+                    <div class="language-options" id="languageOptions">
+                        <div class="language-option" data-lang="en">English</div>
+                        <div class="language-option" data-lang="es">Español</div>
+                    </div>
+                </div>
+                <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-es="Chatear Ahora">Chat Now</span>
+                </a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=LAUNCH+ONE" alt="LaunchOne Logo" class="logo-img">
+                LAUNCH ONE
+            </div>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-nav-links">
+            <a href="#features" class="nav-link" data-en="Features" data-es="Características">Features</a>
+            <a href="#testimonials" class="nav-link" data-en="Results" data-es="Resultados">Results</a>
+            <a href="#pricing" class="nav-link" data-en="Pricing" data-es="Precios">Pricing</a>
+            <a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>
+            <div class="language-toggle" style="margin-top: 1rem;">
+                <button class="language-btn" id="mobileLanguageBtn">
+                    <i class="fas fa-globe"></i>
+                    <span id="mobileCurrentLanguage">EN</span>
+                </button>
+                <div class="language-options" id="mobileLanguageOptions">
+                    <div class="language-option" data-lang="en">English</div>
+                    <div class="language-option" data-lang="es">Español</div>
+                </div>
+            </div>
+            <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-es="Chatear Ahora">Chat Now</span>
+            </a>
+        </div>
+    </div>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="badge" data-en="SECURITY AUDIT" data-es="AUDITORÍA DE SEGURIDAD">SECURITY AUDIT</div>
+                    <h1>
+                        <span data-en="Your Website Is Losing You Money." data-es="Tu sitio web te está haciendo perder dinero.">Your Website Is Losing You Money.</span> 
+                        <span class="highlight" data-en="Let's Fix That." data-es="Vamos a solucionarlo.">Let's Fix That.</span>
+                    </h1>
+                    <p data-en="We've audited 127 sites this year—92% had security flaws silently costing them clients. Yours is next." 
+                       data-es="Hemos auditado 127 sitios este año—92% tenían fallas de seguridad que les costaban clientes. El tuyo es el próximo.">
+                        We've audited 127 sites this year—92% had security flaws silently costing them clients. Yours is next.
+                    </p>
+                    
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt guarantee-icon"></i>
+                        <div>
+                            <h3 data-en="Elite Client Guarantee" data-es="Garantía de Cliente Elite">Elite Client Guarantee</h3>
+                            <p data-en="We only work with clients who value premium quality and are ready to invest in their digital presence." 
+                               data-es="Solo trabajamos con clientes que valoran la calidad premium y están listos para invertir en su presencia digital.">
+                                We only work with clients who value premium quality and are ready to invest in their digital presence.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="#contact" class="btn btn-primary" data-en="Get Your Free Audit" data-es="Obtén tu Auditoría Gratis">Get Your Free Audit</a>
+                        <a href="#pricing" class="btn btn-secondary" data-en="View Packages" data-es="Ver Paquetes">View Packages</a>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern website design" class="hero-image" loading="lazy">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="What You Get" data-es="Lo Que Obtienes">What You Get</h2>
+                    <p data-en="Every website is crafted with precision to deliver exceptional results" 
+                       data-es="Cada sitio web está elaborado con precisión para entregar resultados excepcionales">
+                        Every website is crafted with precision to deliver exceptional results
+                    </p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="card">
+                        <i class="fas fa-lock feature-icon"></i>
+                        <h3 data-en="Untouchable Security" data-es="Seguridad Impenetrable">Untouchable Security</h3>
+                        <p data-en="Military-grade encryption, hacker-proof architecture, and regular security updates to protect your business." 
+                           data-es="Encriptación de grado militar, arquitectura a prueba de hackers y actualizaciones de seguridad regulares para proteger tu negocio.">
+                            Military-grade encryption, hacker-proof architecture, and regular security updates to protect your business.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <i class="fas fa-mobile-alt feature-icon"></i>
+                        <h3 data-en="Mobile-Perfect Design" data-es="Diseño Perfecto para Móviles">Mobile-Perfect Design</h3>
+                        <p data-en="Looks flawless on phones, tablets, and desktops — where your high-value clients actually see it." 
+                           data-es="Se ve perfecto en teléfonos, tablets y computadoras — donde tus clientes de alto valor realmente lo ven.">
+                            Looks flawless on phones, tablets, and desktops — where your high-value clients actually see it.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h3 data-en="VIP Support" data-es="Soporte VIP">VIP Support</h3>
+                        <p data-en="Direct access to our team for urgent updates and changes. No waiting in ticket queues." 
+                           data-es="Acceso directo a nuestro equipo para actualizaciones y cambios urgentes. Sin esperar en colas de tickets.">
+                            Direct access to our team for urgent updates and changes. No waiting in ticket queues.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3 data-en="Conversion Optimization" data-es="Optimización de Conversiones">Conversion Optimization</h3>
+                        <p data-en="Every element engineered to turn visitors into paying clients. Tested and proven." 
+                           data-es="Cada elemento diseñado para convertir visitantes en clientes pagantes. Probado y comprobado.">
+                            Every element engineered to turn visitors into paying clients. Tested and proven.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <i class="fas fa-sync-alt feature-icon"></i>
+                        <h3 data-en="Zero Maintenance Hassle" data-es="Sin Problemas de Mantenimiento">Zero Maintenance Hassle</h3>
+                        <p data-en="We handle all updates, backups, and security patches so you can focus on your business." 
+                           data-es="Nos encargamos de todas las actualizaciones, copias de seguridad y parches de seguridad para que puedas enfocarte en tu negocio.">
+                            We handle all updates, backups, and security patches so you can focus on your business.
+                        </p>
+                    </div>
+                    
+                    <div class="card">
+                        <i class="fas fa-chess-queen feature-icon"></i>
+                        <h3 data-en="Strategic Consultation" data-es="Consulta Estratégica">Strategic Consultation</h3>
+                        <p data-en="Not just a website — a digital strategy session to maximize your online impact." 
+                           data-es="No solo un sitio web — una sesión de estrategia digital para maximizar tu impacto en línea.">
+                            Not just a website — a digital strategy session to maximize your online impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="Client Results" data-es="Resultados de Clientes">Client Results</h2>
+                    <p data-en="Trusted by lawyers, real estate investors, and luxury brand owners" 
+                       data-es="Confían en nosotros abogados, inversionistas inmobiliarios y dueños de marcas de lujo">
+                        Trusted by lawyers, real estate investors, and luxury brand owners
+                    </p>
+                </div>
+                
+                <div class="testimonial">
+                    <p data-en="After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind." 
+                       data-es="Después de que el equipo de Launch One reconstruyó el sitio web de mi firma de abogados, nuestras solicitudes de consulta aumentaron un 300%. Solo las características de seguridad me dan tranquilidad.">
+                        After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind.
+                    </p>
+                    <p class="testimonial-author">- James R., Attorney</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p data-en="My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny." 
+                       data-es="Mi sitio de portafolio inmobiliario estaba desactualizado. Launch One creó una experiencia de lujo que atrae inversionistas de alto patrimonio. Vale cada centavo.">
+                        My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny.
+                    </p>
+                    <p class="testimonial-author">- Sophia K., Real Estate Investor</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p data-en="As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%." 
+                       data-es="Como distribuidor de relojes de lujo, mi sitio necesitaba reflejar exclusividad. El equipo de Launch One entregó una obra maestra que aumentó mi venta promedio en un 40%.">
+                        As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%.
+                    </p>
+                    <p class="testimonial-author">- Marcus T., Luxury Retail</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="Exclusive Packages" data-es="Paquetes Exclusivos">Exclusive Packages</h2>
+                    <p data-en="Choose your level of digital excellence" 
+                       data-es="Elige tu nivel de excelencia digital">
+                        Choose your level of digital excellence
+                    </p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <div class="card pricing-card">
+                        <h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+                        <div class="price">$0</div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li data-en="Find 3 critical vulnerabilities" data-es="Encuentra 3 vulnerabilidades críticas">Find 3 critical vulnerabilities</li>
+                                <li data-en="Security risk assessment" data-es="Evaluación de riesgos de seguridad">Security risk assessment</li>
+                                <li data-en="Basic conversion analysis" data-es="Análisis básico de conversión">Basic conversion analysis</li>
+                                <li data-en="24-hour delivery" data-es="Entrega en 24 horas">24-hour delivery</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis">Claim Free Audit</a>
+                    </div>
+                    
+                    <div class="card pricing-card">
+                        <h3 data-en="Elite Website" data-es="Sitio Web Elite">Elite Website</h3>
+                        <div class="price">$3,000+</div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+                                <li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+                                <li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+                                <li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+                                <li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+                                <li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-en="Ready to Upgrade?" data-es="¿Listo para Mejorar?">Ready to Upgrade?</h2>
+                    <p data-en="Get in touch to discuss your project" 
+                       data-es="Contáctanos para discutir tu proyecto">
+                        Get in touch to discuss your project
+                    </p>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="websiteForm" name="contact" method="POST" data-netlify="true" netlify>
+                        <div class="form-group">
+                            <label for="name" data-en="Your Name" data-es="Tu Nombre">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-en="Email" data-es="Correo Electrónico">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business" data-en="Business/Project Name" data-es="Nombre de Empresa/Proyecto">Business/Project Name</label>
+                            <input type="text" id="business" name="business" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" data-en="Service Interested In" data-es="Servicio de Interés">Service Interested In</label>
+                            <select id="service" name="service" class="form-control">
+                                <option value="free-audit" data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</option>
+                                <option value="elite-website" data-en="Elite Website ($3,000+)" data-es="Sitio Web Elite ($3,000+)">Elite Website ($3,000+)</option>
+                                <option value="ecommerce" data-en="E-Commerce Site ($5,000-$10,000)" data-es="Sitio de Comercio Electrónico ($5,000-$10,000)">E-Commerce Site ($5,000-$10,000)</option>
+                                <option value="maintenance" data-en="Monthly Maintenance ($300-$1,000/month)" data-es="Mantenimiento Mensual ($300-$1,000/mes)">Monthly Maintenance ($300-$1,000/month)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget" data-en="Budget" data-es="Presupuesto">Budget</label>
+                            <input type="text" id="budget" name="budget" class="form-control" data-en-placeholder="What's your budget for this project?" data-es-placeholder="¿Cuál es tu presupuesto para este proyecto?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="details" data-en="Tell us about your business and goals" data-es="Cuéntanos sobre tu negocio y objetivos">Tell us about your business and goals</label>
+                            <textarea id="details" name="details" class="form-control" required></textarea>
+                        </div>
+                        
+                        <input type="hidden" name="_subject" value="New LAUNCH ONE Inquiry">
+                        <input type="hidden" name="_language" id="formLanguage" value="en">
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" data-en="SEND REQUEST" data-es="ENVIAR SOLICITUD">SEND REQUEST</button>
+                            <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> <span data-en="CHAT INSTEAD" data-es="CHATEAR AHORA">CHAT INSTEAD</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="section" style="background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);">
+            <div class="container text-center">
+                <h2 data-en="Your Digital Presence Is Your Most Powerful Asset" 
+                    data-es="Tu Presencia Digital Es Tu Activo Más Poderoso">
+                    Your Digital Presence Is Your Most Powerful Asset
+                </h2>
+                <p class="mb-5" data-en="Elite businesses deserve elite websites. If you're ready to stop leaving money on the table with an outdated or insecure site, let's talk." 
+                   data-es="Los negocios elite merecen sitios web elite. Si estás listo para dejar de perder dinero con un sitio obsoleto o inseguro, hablemos.">
+                    Elite businesses deserve elite websites. If you're ready to stop leaving money on the table with an outdated or insecure site, let's talk.
+                </p>
+                <div>
+                    <a href="mailto:contact@launchone.com" class="btn btn-primary" data-en="EMAIL US DIRECTLY" data-es="ESCRÍBENOS DIRECTAMENTE">EMAIL US DIRECTLY</a>
+                    <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> <span data-en="WHATSAPP US" data-es="WHATSAPP">WHATSAPP US</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5926360468" class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#features" class="footer-link" data-en="Features" data-es="Características">Features</a>
+                <a href="#testimonials" class="footer-link" data-en="Results" data-es="Resultados">Results</a>
+                <a href="#pricing" class="footer-link" data-en="Pricing" data-es="Precios">Pricing</a>
+                <a href="#contact" class="footer-link" data-en="Contact" data-es="Contacto">Contact</a>
+                <a href="mailto:contact@launchone.com" class="footer-link" data-en="Email" data-es="Correo">Email</a>
+            </div>
+            <p class="copyright">© <span id="currentYear"></span> LAUNCH ONE. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Language Toggle
+        const languageBtn = document.getElementById('languageBtn');
+        const languageOptions = document.getElementById('languageOptions');
+        const mobileLanguageBtn = document.getElementById('mobileLanguageBtn');
+        const mobileLanguageOptions = document.getElementById('mobileLanguageOptions');
+        const formLanguageInput = document.getElementById('formLanguage');
+        
+        // Set initial language
+        let currentLang = 'en';
+        
+        // Toggle language dropdown
+        languageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageOptions.classList.toggle('show');
+        });
+        
+        mobileLanguageBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileLanguageOptions.classList.toggle('show');
+        });
+        
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!languageBtn.contains(e.target) && !languageOptions.contains(e.target)) {
+                languageOptions.classList.remove('show');
+            }
+            if (!mobileLanguageBtn.contains(e.target) && !mobileLanguageOptions.contains(e.target)) {
+                mobileLanguageOptions.classList.remove('show');
+            }
+        });
+        
+        // Change language
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Update UI elements
+            document.querySelectorAll('[data-en], [data-es]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' && element.hasAttribute(`data-${lang}-placeholder`)) {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else if (element.tagName !== 'INPUT') {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    }
+                }
+            });
+            
+            // Update language buttons
+            document.getElementById('currentLanguage').textContent = lang.toUpperCase();
+            document.getElementById('mobileCurrentLanguage').textContent = lang.toUpperCase();
+            
+            // Update form language
+            formLanguageInput.value = lang;
+            
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+            
+            // Close dropdowns
+            languageOptions.classList.remove('show');
+            mobileLanguageOptions.classList.remove('show');
+        }
+        
+        // Language option click handlers
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.getAttribute('data-lang');
+                setLanguage(lang);
+                
+                // Save preference to localStorage
+                localStorage.setItem('preferredLang', lang);
+            });
+        });
+        
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('preferredLang');
+        if (savedLang) {
+            setLanguage(savedLang);
+        }
+        
+        // Form submission
+        const form = document.getElementById('websiteForm');
+        form.addEventListener('submit', (e) => {
+            const budget = document.getElementById('budget').value;
+            const service = document.getElementById('service').value;
+            
+            // Check if they're applying for elite website with low budget
+            if (service === 'elite-website' && budget && parseInt(budget) < 3000) {
+                alert(currentLang === 'es' ? 
+                    "Gracias por tu interés. Solo trabajamos con clientes que invierten en calidad con presupuestos a partir de $3,000. Por favor considera nuestro servicio de Auditoría Gratis si deseas comenzar con algo más pequeño." : 
+                    "Thank you for your interest. We only work with clients who invest in quality with budgets starting at $3,000. Please consider our Free Audit service if you'd like to start smaller.");
+                e.preventDefault();
+                return;
+            }
+            
+            // Netlify will handle the form submission
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card, .section-header').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
             display: block;
         }
         
