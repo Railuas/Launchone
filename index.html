@@ -58,12 +58,27 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
             letter-spacing: 1px;
             line-height: 1.1;
+            font-weight: 400;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 6vw, 3rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
         }
         
         a {
@@ -101,12 +116,15 @@
         }
         
         .section {
-            padding: 6rem 0;
+            padding: 8rem 0;
+            position: relative;
         }
         
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
         }
         
         /* Components */
@@ -115,23 +133,44 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
+            padding: 1rem 2rem;
             border-radius: 0.375rem;
             font-weight: 600;
             text-align: center;
             transition: var(--transition);
             white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
         }
         
         .btn-primary {
             background-color: var(--primary);
             color: var(--dark);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
         
         .btn-primary:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
         }
         
         .btn-secondary {
@@ -142,47 +181,87 @@
         
         .btn-secondary:hover {
             background-color: rgba(212, 175, 55, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
         
         .btn-whatsapp {
             background-color: var(--whatsapp);
             color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
         
         .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0.5rem;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
             transition: var(--transition);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             height: 100%;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(212, 175, 55, 0) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
         }
         
         .card:hover {
-            transform: translateY(-0.5rem);
+            transform: translateY(-0.75rem);
             border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
         }
         
         .badge {
             display: inline-block;
             background-color: var(--primary);
             color: var(--dark);
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-weight: 700;
             font-size: 0.875rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-sm);
         }
         
         .highlight {
             color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0.1em;
+            left: 0;
+            width: 100%;
+            height: 0.2em;
+            background-color: var(--primary);
+            opacity: 0.3;
+            z-index: -1;
+            border-radius: 0.1em;
         }
         
         /* Header */
@@ -196,6 +275,12 @@
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-md);
         }
         
         .header-container {
@@ -211,10 +296,16 @@
             font-family: var(--font-heading);
             font-size: 1.75rem;
             color: var(--primary);
+            letter-spacing: 1px;
         }
         
         .logo-img {
             height: 2.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo:hover .logo-img {
+            transform: rotate(15deg);
         }
         
         .nav-links {
@@ -227,6 +318,7 @@
             font-weight: 500;
             position: relative;
             padding: 0.5rem 0;
+            letter-spacing: 0.5px;
         }
         
         .nav-link::after {
@@ -251,6 +343,11 @@
             color: var(--light);
             font-size: 1.5rem;
             cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--primary);
         }
         
         /* Hero */
@@ -264,6 +361,17 @@
             overflow: hidden;
         }
         
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(18, 18, 18, 0) 70%);
+            z-index: 1;
+        }
+        
         .hero-content {
             position: relative;
             z-index: 2;
@@ -273,7 +381,6 @@
         }
         
         .hero h1 {
-            font-size: 4rem;
             margin-bottom: 1.5rem;
             line-height: 1;
         }
@@ -296,6 +403,12 @@
             max-width: 1200px;
             height: auto;
             object-fit: cover;
+            transform: perspective(1000px) rotateX(5deg) rotateY(0deg) rotateZ(0deg);
+            transition: var(--transition);
+        }
+        
+        .hero-image:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         }
         
         /* Features */
@@ -306,39 +419,103 @@
         }
         
         .feature-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .card:hover .feature-icon {
+            transform: scale(1.1);
         }
         
         /* Testimonials */
         .testimonials {
-            background: rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(18, 18, 18, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
         }
         
         .testimonial {
             background: rgba(255, 255, 255, 0.03);
             border-left: 3px solid var(--primary);
-            padding: 2rem;
+            padding: 2.5rem;
             margin: 2rem auto;
             max-width: 700px;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(5px);
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
         
         .testimonial p {
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial p::before,
+        .testimonial p::after {
+            content: '"';
+            color: var(--primary);
+            font-size: 2rem;
+            line-height: 0;
+            opacity: 0.5;
+        }
+        
+        .testimonial p::before {
+            position: absolute;
+            top: -0.5rem;
+            left: -1.5rem;
+        }
+        
+        .testimonial p::after {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1rem;
         }
         
         .testimonial-author {
             font-weight: 600;
             opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .testimonial-author::before {
+            content: '';
+            display: block;
+            width: 1.5rem;
+            height: 1px;
+            background-color: var(--primary);
+            opacity: 0.5;
         }
         
         /* Pricing */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
         
@@ -350,6 +527,7 @@
             font-size: 2.5rem;
             font-family: var(--font-heading);
             margin: 1.5rem 0;
+            color: var(--primary);
         }
         
         .pricing-features {
@@ -358,8 +536,8 @@
         }
         
         .pricing-features li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
             position: relative;
         }
         
@@ -368,6 +546,7 @@
             color: var(--primary);
             position: absolute;
             left: 0;
+            font-weight: bold;
         }
         
         /* Contact Form */
@@ -375,35 +554,40 @@
             max-width: 600px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
-            border-radius: 0.5rem;
+            padding: 3rem;
+            border-radius: 0.75rem;
             border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: var(--shadow-lg);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: 500;
+            letter-spacing: 0.5px;
         }
         
         .form-control {
             width: 100%;
-            padding: 0.875rem 1rem;
+            padding: 1rem 1.25rem;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0.375rem;
+            border-radius: 0.5rem;
             color: var(--light);
             transition: var(--transition);
+            font-size: 1rem;
         }
         
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.15);
         }
         
         select.form-control {
@@ -424,6 +608,7 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
         /* Guarantee */
@@ -432,16 +617,31 @@
             align-items: center;
             gap: 1.5rem;
             background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            max-width: 600px;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 700px;
             margin: 3rem auto;
             border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guarantee::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0) 100%);
+            z-index: -1;
         }
         
         .guarantee-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary);
+            flex-shrink: 0;
         }
         
         /* WhatsApp Float */
@@ -458,7 +658,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.75rem;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             z-index: 90;
             transition: var(--transition);
             animation: pulse 2s infinite;
@@ -466,34 +666,64 @@
         
         .whatsapp-float:hover {
             transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
         }
         
         /* Footer */
         footer {
             background-color: var(--darker);
-            padding: 3rem 0;
+            padding: 4rem 0 2rem;
             text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.5) 50%, rgba(212, 175, 55, 0) 100%);
         }
         
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             flex-wrap: wrap;
         }
         
         .footer-link {
             font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            bottom: -0.25rem;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: var(--transition);
         }
         
         .footer-link:hover {
             color: var(--primary);
         }
         
+        .footer-link:hover::after {
+            width: 100%;
+        }
+        
         .copyright {
             opacity: 0.7;
             font-size: 0.875rem;
+            margin-top: 2rem;
         }
         
         /* Mobile Menu */
@@ -510,6 +740,7 @@
             transform: translateX(100%);
             transition: var(--transition-slow);
             overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         }
         
         .mobile-menu.active {
@@ -530,6 +761,12 @@
             border: none;
             color: var(--light);
             font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .close-menu:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
         }
         
         .mobile-nav-links {
@@ -559,6 +796,7 @@
         
         .language-btn:hover {
             background: rgba(255, 255, 255, 0.2);
+            color: var(--primary);
         }
         
         .language-options {
@@ -598,7 +836,7 @@
             }
             70% {
                 transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
             }
             100% {
                 transform: scale(1);
@@ -606,10 +844,21 @@
             }
         }
         
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 3.5rem;
+            .section {
+                padding: 6rem 0;
             }
         }
         
@@ -622,14 +871,6 @@
                 display: block;
             }
             
-            .hero h1 {
-                font-size: 2.75rem;
-            }
-            
-            .hero p {
-                font-size: 1.125rem;
-            }
-            
             .section {
                 padding: 4rem 0;
             }
@@ -638,13 +879,13 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .contact-form {
+                padding: 2rem;
+            }
         }
         
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-            
             .btn {
                 width: 100%;
             }
@@ -655,6 +896,10 @@
             
             .form-actions .btn {
                 width: 100%;
+            }
+            
+            .mobile-menu {
+                width: 90%;
             }
         }
         
@@ -677,6 +922,23 @@
         .mb-5 { margin-bottom: 2rem; }
         .mb-6 { margin-bottom: 3rem; }
         
+        /* Animation Classes */
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
         /* Hidden elements */
         [data-lang] {
             display: none;
@@ -689,7 +951,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
         <div class="container header-container">
             <a href="#" class="logo">
                 <img src="https://via.placeholder.com/150x50?text=LAUNCH+ONE" alt="LaunchOne Logo" class="logo-img">
@@ -770,7 +1032,7 @@
                         We've audited 127 sites this year—92% had security flaws silently costing them clients. Yours is next.
                     </p>
                     
-                    <div class="guarantee">
+                    <div class="guarantee animate delay-1">
                         <i class="fas fa-shield-alt guarantee-icon"></i>
                         <div>
                             <h3 data-en="Elite Client Guarantee" data-es="Garantía de Cliente Elite">Elite Client Guarantee</h3>
@@ -782,11 +1044,11 @@
                     </div>
                     
                     <div class="mt-6">
-                        <a href="#contact" class="btn btn-primary" data-en="Get Your Free Audit" data-es="Obtén tu Auditoría Gratis">Get Your Free Audit</a>
-                        <a href="#pricing" class="btn btn-secondary" data-en="View Packages" data-es="Ver Paquetes">View Packages</a>
+                        <a href="#contact" class="btn btn-primary animate delay-2" data-en="Get Your Free Audit" data-es="Obtén tu Auditoría Gratis">Get Your Free Audit</a>
+                        <a href="#pricing" class="btn btn-secondary animate delay-2" data-en="View Packages" data-es="Ver Paquetes">View Packages</a>
                     </div>
                     
-                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern website design" class="hero-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern website design" class="hero-image animate delay-3" loading="lazy">
                 </div>
             </div>
         </section>
@@ -803,7 +1065,7 @@
                 </div>
                 
                 <div class="features-grid">
-                    <div class="card">
+                    <div class="card animate">
                         <i class="fas fa-lock feature-icon"></i>
                         <h3 data-en="Untouchable Security" data-es="Seguridad Impenetrable">Untouchable Security</h3>
                         <p data-en="Military-grade encryption, hacker-proof architecture, and regular security updates to protect your business." 
@@ -812,7 +1074,7 @@
                         </p>
                     </div>
                     
-                    <div class="card">
+                    <div class="card animate delay-1">
                         <i class="fas fa-mobile-alt feature-icon"></i>
                         <h3 data-en="Mobile-Perfect Design" data-es="Diseño Perfecto para Móviles">Mobile-Perfect Design</h3>
                         <p data-en="Looks flawless on phones, tablets, and desktops — where your high-value clients actually see it." 
@@ -821,7 +1083,7 @@
                         </p>
                     </div>
                     
-                    <div class="card">
+                    <div class="card animate delay-2">
                         <i class="fas fa-headset feature-icon"></i>
                         <h3 data-en="VIP Support" data-es="Soporte VIP">VIP Support</h3>
                         <p data-en="Direct access to our team for urgent updates and changes. No waiting in ticket queues." 
@@ -830,7 +1092,7 @@
                         </p>
                     </div>
                     
-                    <div class="card">
+                    <div class="card animate">
                         <i class="fas fa-chart-line feature-icon"></i>
                         <h3 data-en="Conversion Optimization" data-es="Optimización de Conversiones">Conversion Optimization</h3>
                         <p data-en="Every element engineered to turn visitors into paying clients. Tested and proven." 
@@ -839,7 +1101,7 @@
                         </p>
                     </div>
                     
-                    <div class="card">
+                    <div class="card animate delay-1">
                         <i class="fas fa-sync-alt feature-icon"></i>
                         <h3 data-en="Zero Maintenance Hassle" data-es="Sin Problemas de Mantenimiento">Zero Maintenance Hassle</h3>
                         <p data-en="We handle all updates, backups, and security patches so you can focus on your business." 
@@ -848,7 +1110,7 @@
                         </p>
                     </div>
                     
-                    <div class="card">
+                    <div class="card animate delay-2">
                         <i class="fas fa-chess-queen feature-icon"></i>
                         <h3 data-en="Strategic Consultation" data-es="Consulta Estratégica">Strategic Consultation</h3>
                         <p data-en="Not just a website — a digital strategy session to maximize your online impact." 
@@ -871,7 +1133,7 @@
                     </p>
                 </div>
                 
-                <div class="testimonial">
+                <div class="testimonial animate">
                     <p data-en="After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind." 
                        data-es="Después de que el equipo de Launch One reconstruyó el sitio web de mi firma de abogados, nuestras solicitudes de consulta aumentaron un 300%. Solo las características de seguridad me dan tranquilidad.">
                         After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind.
@@ -879,7 +1141,7 @@
                     <p class="testimonial-author">- James R., Attorney</p>
                 </div>
                 
-                <div class="testimonial">
+                <div class="testimonial animate delay-1">
                     <p data-en="My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny." 
                        data-es="Mi sitio de portafolio inmobiliario estaba desactualizado. Launch One creó una experiencia de lujo que atrae inversionistas de alto patrimonio. Vale cada centavo.">
                         My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny.
@@ -887,7 +1149,7 @@
                     <p class="testimonial-author">- Sophia K., Real Estate Investor</p>
                 </div>
                 
-                <div class="testimonial">
+                <div class="testimonial animate delay-2">
                     <p data-en="As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%." 
                        data-es="Como distribuidor de relojes de lujo, mi sitio necesitaba reflejar exclusividad. El equipo de Launch One entregó una obra maestra que aumentó mi venta promedio en un 40%.">
                         As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%.
@@ -909,7 +1171,7 @@
                 </div>
                 
                 <div class="pricing-grid">
-                    <div class="card pricing-card">
+                    <div class="card pricing-card animate">
                         <h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
                         <div class="price">$0</div>
                         <div class="pricing-features">
@@ -923,7 +1185,7 @@
                         <a href="#contact" class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis">Claim Free Audit</a>
                     </div>
                     
-                    <div class="card pricing-card">
+                    <div class="card pricing-card animate delay-1">
                         <h3 data-en="Elite Website" data-es="Sitio Web Elite">Elite Website</h3>
                         <div class="price">$3,000+</div>
                         <div class="pricing-features">
@@ -953,7 +1215,7 @@
                     </p>
                 </div>
                 
-                <div class="contact-form">
+                <div class="contact-form animate">
                     <form id="websiteForm" name="contact" method="POST" data-netlify="true" netlify>
                         <div class="form-group">
                             <label for="name" data-en="Your Name" data-es="Tu Nombre">Your Name</label>
@@ -1184,6 +1446,16 @@
             });
         });
         
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1
@@ -1197,7 +1469,7 @@
             });
         }, observerOptions);
         
-        document.querySelectorAll('.card, .section-header').forEach(element => {
+        document.querySelectorAll('.card, .section-header, .testimonial, .contact-form, .hero-image, .guarantee').forEach(element => {
             observer.observe(element);
         });
     </script>
