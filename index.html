@@ -950,6 +950,11 @@
     </style>
 </head>
 <body>
+    <!-- Background Audio (subtle) -->
+    <audio id="backgroundAudio" loop autoplay>
+        <source src="gia_hum.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Header -->
     <header id="mainHeader">
         <div class="container header-container">
@@ -1216,7 +1221,7 @@
                 </div>
                 
                 <div class="contact-form animate">
-                    <form id="websiteForm" name="contact" method="POST" data-netlify="true" netlify>
+                    <form name="contact" method="POST" netlify>
                         <div class="form-group">
                             <label for="name" data-en="Your Name" data-es="Tu Nombre">Your Name</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -1412,7 +1417,7 @@
         }
         
         // Form submission
-        const form = document.getElementById('websiteForm');
+        const form = document.querySelector('form[name="contact"]');
         form.addEventListener('submit', (e) => {
             const budget = document.getElementById('budget').value;
             const service = document.getElementById('service').value;
@@ -1472,6 +1477,22 @@
         document.querySelectorAll('.card, .section-header, .testimonial, .contact-form, .hero-image, .guarantee').forEach(element => {
             observer.observe(element);
         });
+
+        // Background Audio Control
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        
+        // Set audio to very low volume (almost inaudible)
+        backgroundAudio.volume = 0.05; // 5% volume
+        
+        // Ensure audio plays (some browsers require user interaction first)
+        document.addEventListener('click', function() {
+            backgroundAudio.play().catch(e => console.log('Audio play prevented:', e));
+        }, { once: true });
+        
+        // Fallback in case autoplay is blocked
+        setTimeout(() => {
+            backgroundAudio.play().catch(e => console.log('Audio play prevented:', e));
+        }, 1000);
     </script>
 </body>
 </html>
