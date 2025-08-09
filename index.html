@@ -1,22 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaunchOne | Elite Websites for Industry Leaders</title>
-    <meta name="description" content="We craft untouchable websites for lawyers, real estate moguls & luxury brands. Flawless code, royal treatment. Starting at $3,000.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▲</text></svg>">
-    <meta property="og:title" content="LaunchOne | Elite Websites for Industry Leaders">
-    <meta property="og:description" content="Untouchable websites for lawyers, real estate moguls & luxury brands. Starting at $3,000.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://launchone.com">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
-    
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LaunchOne | Elite Websites for Industry Leaders</title>
+<meta content="We craft untouchable websites for lawyers, real estate moguls &amp; luxury brands. Flawless code, royal treatment. Starting at $3,000." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;▲&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<meta content="LaunchOne | Elite Websites for Industry Leaders" property="og:title"/>
+<meta content="Untouchable websites for lawyers, real estate moguls &amp; luxury brands. Starting at $3,000." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://launchone.com" property="og:url"/>
+<meta content="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" property="og:image"/>
+<style>
         :root {
             --primary: #D4AF37;
             --primary-dark: #b8932b;
@@ -947,371 +947,672 @@
         [data-lang].active {
             display: block;
         }
-    </style>
+    
+
+/* === Caleb Premium Style Pack v1 === */
+/* Subtle luxe background mesh + film grain for depth */
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -120px, rgba(212,175,55,0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 40%, rgba(88,83,72,0.10), transparent 65%),
+    radial-gradient(900px 500px at 120% 70%, rgba(136,136,136,0.06), transparent 60%),
+    linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  position: relative;
+}
+body::after{
+  content:"";
+  position: fixed; inset: 0; pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='table' tableValues='0 0.8'/></feComponentTransfer></filter><rect width='64' height='64' filter='url(%23n)' opacity='0.25'/></svg>");
+  background-size:256px 256px;
+}
+
+/* Cards: elevate with soft sheen & refined borders (less gold saturation) */
+.card, .guarantee, .contact-form {
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.20);
+}
+
+/* Section framing: soft fades instead of hard breaks */
+.section { position: relative; overflow: clip; }
+.section::before, .section::after{
+  content:""; position:absolute; left:0; right:0; height:24px; pointer-events:none; opacity:.35;
+}
+.section::before{ top:-1px; background:linear-gradient(to bottom, rgba(255,255,255,0.06), transparent); }
+.section::after{ bottom:-1px; background:linear-gradient(to top, rgba(255,255,255,0.06), transparent); }
+
+/* Headings: premium underline bar & micro dot */
+.section-header h2{ letter-spacing:.4px; }
+.section-header h2::after{
+  content:""; display:block; width:120px; height:5px; margin:.75rem auto 0;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--primary) 0%, #e7cf7a 60%, var(--primary) 100%);
+  box-shadow: 0 2px 8px rgba(212,175,55,0.25);
+}
+.section-header h2::before{
+  content:""; position:relative; display:block; width:6px; height:6px; margin:.15rem auto 0;
+  background: var(--primary); border-radius:50%; opacity:.9;
+}
+
+/* Buttons: subtle sheen, stronger focus */
+.btn { box-shadow: 0 10px 22px rgba(212,175,55,0.12); }
+.btn:focus-visible { outline: 3px dashed rgba(212,175,55,0.6); outline-offset: 3px; }
+.btn-secondary { border-color: rgba(212,175,55,0.6); }
+.btn-secondary:hover { background: rgba(212,175,55,0.08); }
+
+/* Testimonials background pattern softer */
+.testimonials::before{ opacity:.4; }
+
+/* CONTACT section — professional variant (white card + dark copy) */
+#contact .contact-form{
+  background:#ffffff;
+  color:#111827;
+  border:1px solid rgba(17,24,39,0.12);
+  box-shadow: 0 14px 28px rgba(17,24,39,0.12);
+}
+#contact .contact-form .form-group label{ color:#1f2937; }
+#contact .contact-form .form-control{
+  background:#fff; color:#111827;
+  border:1.5px solid #e5e7eb;
+}
+#contact .contact-form .form-control:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.20);
+  background:#fff;
+}
+#contact .contact-form .btn.btn-primary{
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color:#121212;
+}
+
+/* Footer: slightly brighter copy for readability */
+footer .footer-link{ color: #d8d8d8; }
+footer .footer-link:hover{ color: var(--primary); }
+footer .copyright{ color:#bdbdbd; opacity:1; }
+
+/* Accessibility: ensure paragraph text color never dips below readable range */
+p, li { color: #e9e9e9; }
+.testimonials p { color:#f2f2f2; }
+
+
+/* Compact package cards + clean details accordion */
+.package-card { padding: 1.25rem 1.25rem; }
+.package-card h3 { margin-bottom: .35rem; }
+.package-card .price { margin: .35rem 0 .5rem; font-weight: 700; }
+.package-card p { margin-bottom: .5rem; }
+.pkg-details { margin-top: .25rem; }
+.pkg-details > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary);
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+}
+.pkg-details > summary::-webkit-details-marker { display: none; }
+.pkg-details > summary:before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(0deg);
+  transition: transform .2s ease;
+}
+.pkg-details[open] > summary:before { transform: rotate(90deg); }
+.pkg-details ul { margin: .35rem 0 0 .75rem; padding-left: .75rem; }
+.pkg-details li { margin: .25rem 0; font-size: .95rem; }
+
+
+/* Multi-select services styling */
+.form-group legend { font-weight:700; color: var(--primary); margin-bottom:.35rem; }
+.checkbox-option input[type="checkbox"] {
+  width: 18px; height: 18px; accent-color: var(--primary);
+}
+.checkbox-option span { font-size:1rem; color:#1f2937; }
+
+
+/* Ready to Upgrade — professional layout */
+.upgrade-wrapper {
+  display: grid;
+  grid-template-columns: minmax(280px, 520px);
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.25rem auto 2.5rem;
+}
+/* On large screens, align services and form side-by-side */
+@media (min-width: 1100px){
+  .upgrade-wrapper {
+    grid-template-columns: 420px minmax(420px, 640px);
+    align-items: start;
+  }
+}
+/* Services card */
+.service-options {
+  background: #111315;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.2);
+}
+.service-options legend {
+  padding: 0 .25rem;
+  font-weight: 800;
+  color: #e5e5e5;
+  font-size: 1.05rem;
+  margin-left: .25rem;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem .75rem;
+  margin-top: .5rem;
+}
+@media (min-width: 560px){
+  .service-grid { grid-template-columns: 1fr 1fr; }
+}
+.checkbox-option {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: .65rem .75rem;
+  transition: background .2s ease, border-color .2s ease, transform .1s ease;
+}
+.checkbox-option:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+.checkbox-option input[type="checkbox"] {
+  width: 18px; height: 18px;
+  accent-color: #d4af37; /* subtle gold accent to match theme */
+}
+.checkbox-option span {
+  color: #e8e8e8;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+/* Contact form card — ensure same visual weight */
+.upgrade-wrapper form {
+  background: #111315;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.2);
+}
+/* USD note alignment */
+.upgrade-wrapper .usd-note { font-size: .95rem; opacity: .85; margin-top: -.5rem; }
+
+
+/* Center & broaden the Ready section */
+.upgrade-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+}
+.upgrade-wrapper > * {
+    flex: 1 1 450px;
+    max-width: 550px;
+}
+
+
+/* Inline logo sizing (minimal, non-invasive) */
+.site-logo { height: 44px; width: auto; display: inline-block; vertical-align: middle; }
+header .site-logo { margin-right: 10px; }
+</style>
 </head>
 <body>
-    <!-- Background Audio (subtle) -->
-    <audio id="backgroundAudio" loop autoplay>
-        <source src="gia_hum.mp3" type="audio/mpeg">
-    </audio>
+<!-- Background Audio (subtle) -->
+<audio autoplay="" id="backgroundAudio" loop="">
+<source src="gia_hum.mp3" type="audio/mpeg"/>
+</audio>
+<!-- Header -->
+<header id="mainHeader">
+<div class="container header-container">
+<a class="logo" href="#"><img alt="Caleb Studio" class="site-logo" src="caleb-logo.svg"/>
 
-    <!-- Header -->
-    <header id="mainHeader">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="https://via.placeholder.com/150x50?text=LAUNCH+ONE" alt="LaunchOne Logo" class="logo-img">
                 LAUNCH ONE
             </a>
-            
-            <nav class="nav-links">
-                <a href="#features" class="nav-link" data-en="Features" data-es="Características">Features</a>
-                <a href="#testimonials" class="nav-link" data-en="Results" data-es="Resultados">Results</a>
-                <a href="#pricing" class="nav-link" data-en="Pricing" data-es="Precios">Pricing</a>
-                <a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>
-                <div class="language-toggle">
-                    <button class="language-btn" id="languageBtn">
-                        <i class="fas fa-globe"></i>
-                        <span id="currentLanguage">EN</span>
-                    </button>
-                    <div class="language-options" id="languageOptions">
-                        <div class="language-option" data-lang="en">English</div>
-                        <div class="language-option" data-lang="es">Español</div>
-                    </div>
-                </div>
-                <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-es="Chatear Ahora">Chat Now</span>
-                </a>
-            </nav>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <div class="logo">
-                <img src="https://via.placeholder.com/150x50?text=LAUNCH+ONE" alt="LaunchOne Logo" class="logo-img">
+<nav class="nav-links">
+<a class="nav-link" data-en="Features" data-es="Características" href="#features">Features</a>
+<a class="nav-link" data-en="Results" data-es="Resultados" href="#testimonials">Results</a>
+<a class="nav-link" data-en="Pricing" data-es="Precios" href="#pricing">Pricing</a>
+<a class="nav-link" data-en="Contact" data-es="Contacto" href="#contact">Contact</a>
+<div class="language-toggle">
+<button class="language-btn" id="languageBtn">
+<i class="fas fa-globe"></i>
+<span id="currentLanguage">EN</span>
+</button>
+<div class="language-options" id="languageOptions">
+<div class="language-option" data-lang="en">English</div>
+<div class="language-option" data-lang="es">Español</div>
+</div>
+</div>
+<a class="btn btn-whatsapp" href="https://wa.me/5926360468" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-es="Chatear Ahora">Chat Now</span>
+</a>
+</nav>
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</header>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu-header">
+<div class="logo">
+<img alt="LaunchOne Logo" class="logo-img" src="https://via.placeholder.com/150x50?text=LAUNCH+ONE"/>
                 LAUNCH ONE
             </div>
-            <button class="close-menu" id="closeMenu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="mobile-nav-links">
-            <a href="#features" class="nav-link" data-en="Features" data-es="Características">Features</a>
-            <a href="#testimonials" class="nav-link" data-en="Results" data-es="Resultados">Results</a>
-            <a href="#pricing" class="nav-link" data-en="Pricing" data-es="Precios">Pricing</a>
-            <a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>
-            <div class="language-toggle" style="margin-top: 1rem;">
-                <button class="language-btn" id="mobileLanguageBtn">
-                    <i class="fas fa-globe"></i>
-                    <span id="mobileCurrentLanguage">EN</span>
-                </button>
-                <div class="language-options" id="mobileLanguageOptions">
-                    <div class="language-option" data-lang="en">English</div>
-                    <div class="language-option" data-lang="es">Español</div>
-                </div>
-            </div>
-            <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-es="Chatear Ahora">Chat Now</span>
-            </a>
-        </div>
-    </div>
-    
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="badge" data-en="SECURITY AUDIT" data-es="AUDITORÍA DE SEGURIDAD">SECURITY AUDIT</div>
-                    <h1>
-                        <span data-en="Your Website Is Losing You Money." data-es="Tu sitio web te está haciendo perder dinero.">Your Website Is Losing You Money.</span> 
-                        <span class="highlight" data-en="Let's Fix That." data-es="Vamos a solucionarlo.">Let's Fix That.</span>
-                    </h1>
-                    <p data-en="We've audited 127 sites this year—92% had security flaws silently costing them clients. Yours is next." 
-                       data-es="Hemos auditado 127 sitios este año—92% tenían fallas de seguridad que les costaban clientes. El tuyo es el próximo.">
+<button class="close-menu" id="closeMenu">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="mobile-nav-links">
+<a class="nav-link" data-en="Features" data-es="Características" href="#features">Features</a>
+<a class="nav-link" data-en="Results" data-es="Resultados" href="#testimonials">Results</a>
+<a class="nav-link" data-en="Pricing" data-es="Precios" href="#pricing">Pricing</a>
+<a class="nav-link" data-en="Contact" data-es="Contacto" href="#contact">Contact</a>
+<div class="language-toggle" style="margin-top: 1rem;">
+<button class="language-btn" id="mobileLanguageBtn">
+<i class="fas fa-globe"></i>
+<span id="mobileCurrentLanguage">EN</span>
+</button>
+<div class="language-options" id="mobileLanguageOptions">
+<div class="language-option" data-lang="en">English</div>
+<div class="language-option" data-lang="es">Español</div>
+</div>
+</div>
+<a class="btn btn-whatsapp" href="https://wa.me/5926360468" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-es="Chatear Ahora">Chat Now</span>
+</a>
+</div>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="badge" data-en="SECURITY AUDIT" data-es="AUDITORÍA DE SEGURIDAD">SECURITY AUDIT</div>
+<h1>
+<span data-en="Your Website Is Losing You Money." data-es="Tu sitio web te está haciendo perder dinero.">Your Website Is Losing You Money.</span>
+<span class="highlight" data-en="Let's Fix That." data-es="Vamos a solucionarlo.">Let's Fix That.</span>
+</h1>
+<p data-en="We've audited 127 sites this year—92% had security flaws silently costing them clients. Yours is next." data-es="Hemos auditado 127 sitios este año—92% tenían fallas de seguridad que les costaban clientes. El tuyo es el próximo.">
                         We've audited 127 sites this year—92% had security flaws silently costing them clients. Yours is next.
                     </p>
-                    
-                    <div class="guarantee animate delay-1">
-                        <i class="fas fa-shield-alt guarantee-icon"></i>
-                        <div>
-                            <h3 data-en="Elite Client Guarantee" data-es="Garantía de Cliente Elite">Elite Client Guarantee</h3>
-                            <p data-en="We only work with clients who value premium quality and are ready to invest in their digital presence." 
-                               data-es="Solo trabajamos con clientes que valoran la calidad premium y están listos para invertir en su presencia digital.">
+<div class="guarantee animate delay-1">
+<i class="fas fa-shield-alt guarantee-icon"></i>
+<div>
+<h3 data-en="Elite Client Guarantee" data-es="Garantía de Cliente Elite">Elite Client Guarantee</h3>
+<p data-en="We only work with clients who value premium quality and are ready to invest in their digital presence." data-es="Solo trabajamos con clientes que valoran la calidad premium y están listos para invertir en su presencia digital.">
                                 We only work with clients who value premium quality and are ready to invest in their digital presence.
                             </p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6">
-                        <a href="#contact" class="btn btn-primary animate delay-2" data-en="Get Your Free Audit" data-es="Obtén tu Auditoría Gratis">Get Your Free Audit</a>
-                        <a href="#pricing" class="btn btn-secondary animate delay-2" data-en="View Packages" data-es="Ver Paquetes">View Packages</a>
-                    </div>
-                    
-                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern website design" class="hero-image animate delay-3" loading="lazy">
-                </div>
-            </div>
-        </section>
-        
-        <!-- Features Section -->
-        <section id="features" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="What You Get" data-es="Lo Que Obtienes">What You Get</h2>
-                    <p data-en="Every website is crafted with precision to deliver exceptional results" 
-                       data-es="Cada sitio web está elaborado con precisión para entregar resultados excepcionales">
+</div>
+</div>
+<div class="mt-6">
+<a class="btn btn-primary animate delay-2" data-en="Get Your Free Audit" data-es="Obtén tu Auditoría Gratis" href="#contact">Get Your Free Audit</a>
+<a class="btn btn-secondary animate delay-2" data-en="View Packages" data-es="Ver Paquetes" href="#pricing">View Packages</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="section" id="features">
+<div class="container">
+<div class="section-header">
+<h2 data-en="What You Get" data-es="Lo Que Obtienes">What You Get</h2>
+<p data-en="Every website is crafted with precision to deliver exceptional results" data-es="Cada sitio web está elaborado con precisión para entregar resultados excepcionales">
                         Every website is crafted with precision to deliver exceptional results
                     </p>
-                </div>
-                
-                <div class="features-grid">
-                    <div class="card animate">
-                        <i class="fas fa-lock feature-icon"></i>
-                        <h3 data-en="Untouchable Security" data-es="Seguridad Impenetrable">Untouchable Security</h3>
-                        <p data-en="Military-grade encryption, hacker-proof architecture, and regular security updates to protect your business." 
-                           data-es="Encriptación de grado militar, arquitectura a prueba de hackers y actualizaciones de seguridad regulares para proteger tu negocio.">
+</div>
+<div class="features-grid">
+<div class="card animate">
+<i class="fas fa-lock feature-icon"></i>
+<h3 data-en="Untouchable Security" data-es="Seguridad Impenetrable">Untouchable Security</h3>
+<p data-en="Military-grade encryption, hacker-proof architecture, and regular security updates to protect your business." data-es="Encriptación de grado militar, arquitectura a prueba de hackers y actualizaciones de seguridad regulares para proteger tu negocio.">
                             Military-grade encryption, hacker-proof architecture, and regular security updates to protect your business.
                         </p>
-                    </div>
-                    
-                    <div class="card animate delay-1">
-                        <i class="fas fa-mobile-alt feature-icon"></i>
-                        <h3 data-en="Mobile-Perfect Design" data-es="Diseño Perfecto para Móviles">Mobile-Perfect Design</h3>
-                        <p data-en="Looks flawless on phones, tablets, and desktops — where your high-value clients actually see it." 
-                           data-es="Se ve perfecto en teléfonos, tablets y computadoras — donde tus clientes de alto valor realmente lo ven.">
+</div>
+<div class="card animate delay-1">
+<i class="fas fa-mobile-alt feature-icon"></i>
+<h3 data-en="Mobile-Perfect Design" data-es="Diseño Perfecto para Móviles">Mobile-Perfect Design</h3>
+<p data-en="Looks flawless on phones, tablets, and desktops — where your high-value clients actually see it." data-es="Se ve perfecto en teléfonos, tablets y computadoras — donde tus clientes de alto valor realmente lo ven.">
                             Looks flawless on phones, tablets, and desktops — where your high-value clients actually see it.
                         </p>
-                    </div>
-                    
-                    <div class="card animate delay-2">
-                        <i class="fas fa-headset feature-icon"></i>
-                        <h3 data-en="VIP Support" data-es="Soporte VIP">VIP Support</h3>
-                        <p data-en="Direct access to our team for urgent updates and changes. No waiting in ticket queues." 
-                           data-es="Acceso directo a nuestro equipo para actualizaciones y cambios urgentes. Sin esperar en colas de tickets.">
+</div>
+<div class="card animate delay-2">
+<i class="fas fa-headset feature-icon"></i>
+<h3 data-en="VIP Support" data-es="Soporte VIP">VIP Support</h3>
+<p data-en="Direct access to our team for urgent updates and changes. No waiting in ticket queues." data-es="Acceso directo a nuestro equipo para actualizaciones y cambios urgentes. Sin esperar en colas de tickets.">
                             Direct access to our team for urgent updates and changes. No waiting in ticket queues.
                         </p>
-                    </div>
-                    
-                    <div class="card animate">
-                        <i class="fas fa-chart-line feature-icon"></i>
-                        <h3 data-en="Conversion Optimization" data-es="Optimización de Conversiones">Conversion Optimization</h3>
-                        <p data-en="Every element engineered to turn visitors into paying clients. Tested and proven." 
-                           data-es="Cada elemento diseñado para convertir visitantes en clientes pagantes. Probado y comprobado.">
+</div>
+<div class="card animate">
+<i class="fas fa-chart-line feature-icon"></i>
+<h3 data-en="Conversion Optimization" data-es="Optimización de Conversiones">Conversion Optimization</h3>
+<p data-en="Every element engineered to turn visitors into paying clients. Tested and proven." data-es="Cada elemento diseñado para convertir visitantes en clientes pagantes. Probado y comprobado.">
                             Every element engineered to turn visitors into paying clients. Tested and proven.
                         </p>
-                    </div>
-                    
-                    <div class="card animate delay-1">
-                        <i class="fas fa-sync-alt feature-icon"></i>
-                        <h3 data-en="Zero Maintenance Hassle" data-es="Sin Problemas de Mantenimiento">Zero Maintenance Hassle</h3>
-                        <p data-en="We handle all updates, backups, and security patches so you can focus on your business." 
-                           data-es="Nos encargamos de todas las actualizaciones, copias de seguridad y parches de seguridad para que puedas enfocarte en tu negocio.">
+</div>
+<div class="card animate delay-1">
+<i class="fas fa-sync-alt feature-icon"></i>
+<h3 data-en="Zero Maintenance Hassle" data-es="Sin Problemas de Mantenimiento">Zero Maintenance Hassle</h3>
+<p data-en="We handle all updates, backups, and security patches so you can focus on your business." data-es="Nos encargamos de todas las actualizaciones, copias de seguridad y parches de seguridad para que puedas enfocarte en tu negocio.">
                             We handle all updates, backups, and security patches so you can focus on your business.
                         </p>
-                    </div>
-                    
-                    <div class="card animate delay-2">
-                        <i class="fas fa-chess-queen feature-icon"></i>
-                        <h3 data-en="Strategic Consultation" data-es="Consulta Estratégica">Strategic Consultation</h3>
-                        <p data-en="Not just a website — a digital strategy session to maximize your online impact." 
-                           data-es="No solo un sitio web — una sesión de estrategia digital para maximizar tu impacto en línea.">
+</div>
+<div class="card animate delay-2">
+<i class="fas fa-chess-queen feature-icon"></i>
+<h3 data-en="Strategic Consultation" data-es="Consulta Estratégica">Strategic Consultation</h3>
+<p data-en="Not just a website — a digital strategy session to maximize your online impact." data-es="No solo un sitio web — una sesión de estrategia digital para maximizar tu impacto en línea.">
                             Not just a website — a digital strategy session to maximize your online impact.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="section testimonials">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Client Results" data-es="Resultados de Clientes">Client Results</h2>
-                    <p data-en="Trusted by lawyers, real estate investors, and luxury brand owners" 
-                       data-es="Confían en nosotros abogados, inversionistas inmobiliarios y dueños de marcas de lujo">
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="section testimonials" id="testimonials">
+<div class="container">
+<div class="section-header">
+<h2 data-en="Client Results" data-es="Resultados de Clientes">Client Results</h2>
+<p data-en="Trusted by lawyers, real estate investors, and luxury brand owners" data-es="Confían en nosotros abogados, inversionistas inmobiliarios y dueños de marcas de lujo">
                         Trusted by lawyers, real estate investors, and luxury brand owners
                     </p>
-                </div>
-                
-                <div class="testimonial animate">
-                    <p data-en="After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind." 
-                       data-es="Después de que el equipo de Launch One reconstruyó el sitio web de mi firma de abogados, nuestras solicitudes de consulta aumentaron un 300%. Solo las características de seguridad me dan tranquilidad.">
+</div>
+<div class="testimonial animate">
+<p data-en="After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind." data-es="Después de que el equipo de Launch One reconstruyó el sitio web de mi firma de abogados, nuestras solicitudes de consulta aumentaron un 300%. Solo las características de seguridad me dan tranquilidad.">
                         After the Launch One team rebuilt my law firm's website, our consultation requests increased by 300%. The security features alone give me peace of mind.
                     </p>
-                    <p class="testimonial-author">- James R., Attorney</p>
-                </div>
-                
-                <div class="testimonial animate delay-1">
-                    <p data-en="My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny." 
-                       data-es="Mi sitio de portafolio inmobiliario estaba desactualizado. Launch One creó una experiencia de lujo que atrae inversionistas de alto patrimonio. Vale cada centavo.">
+<p class="testimonial-author">- James R., Attorney</p>
+</div>
+<div class="testimonial animate delay-1">
+<p data-en="My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny." data-es="Mi sitio de portafolio inmobiliario estaba desactualizado. Launch One creó una experiencia de lujo que atrae inversionistas de alto patrimonio. Vale cada centavo.">
                         My real estate portfolio site was outdated. Launch One created a luxury experience that attracts high-net-worth investors. Worth every penny.
                     </p>
-                    <p class="testimonial-author">- Sophia K., Real Estate Investor</p>
-                </div>
-                
-                <div class="testimonial animate delay-2">
-                    <p data-en="As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%." 
-                       data-es="Como distribuidor de relojes de lujo, mi sitio necesitaba reflejar exclusividad. El equipo de Launch One entregó una obra maestra que aumentó mi venta promedio en un 40%.">
+<p class="testimonial-author">- Sophia K., Real Estate Investor</p>
+</div>
+<div class="testimonial animate delay-2">
+<p data-en="As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%." data-es="Como distribuidor de relojes de lujo, mi sitio necesitaba reflejar exclusividad. El equipo de Launch One entregó una obra maestra que aumentó mi venta promedio en un 40%.">
                         As a luxury watch dealer, my site needed to reflect exclusivity. The Launch One team delivered a masterpiece that increased my average sale by 40%.
                     </p>
-                    <p class="testimonial-author">- Marcus T., Luxury Retail</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Pricing Section -->
-        <section id="pricing" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Exclusive Packages" data-es="Paquetes Exclusivos">Exclusive Packages</h2>
-                    <p data-en="Choose your level of digital excellence" 
-                       data-es="Elige tu nivel de excelencia digital">
+<p class="testimonial-author">- Marcus T., Luxury Retail</p>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="section" id="pricing">
+<div class="container">
+<div class="section-header">
+<h2 data-en="Exclusive Packages" data-es="Paquetes Exclusivos">Exclusive Packages</h2><p style="text-align:center;font-weight:600;margin-top:6px;margin-bottom:22px;opacity:.9;">💲 All prices are in USD</p>
+<p data-en="Choose your level of digital excellence" data-es="Elige tu nivel de excelencia digital">
                         Choose your level of digital excellence
                     </p>
-                </div>
-                
-                <div class="pricing-grid">
-                    <div class="card pricing-card animate">
-                        <h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
-                        <div class="price">$0</div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li data-en="Find 3 critical vulnerabilities" data-es="Encuentra 3 vulnerabilidades críticas">Find 3 critical vulnerabilities</li>
-                                <li data-en="Security risk assessment" data-es="Evaluación de riesgos de seguridad">Security risk assessment</li>
-                                <li data-en="Basic conversion analysis" data-es="Análisis básico de conversión">Basic conversion analysis</li>
-                                <li data-en="24-hour delivery" data-es="Entrega en 24 horas">24-hour delivery</li>
-                            </ul>
-                        </div>
-                        <a href="#contact" class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis">Claim Free Audit</a>
-                    </div>
-                    
-                    <div class="card pricing-card animate delay-1">
-                        <h3 data-en="Elite Website" data-es="Sitio Web Elite">Elite Website</h3>
-                        <div class="price">$3,000+</div>
-                        <div class="pricing-features">
-                            <ul>
-                                <li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
-                                <li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
-                                <li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
-                                <li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
-                                <li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
-                                <li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
-                            </ul>
-                        </div>
-                        <a href="#contact" class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora">Apply Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Ready to Upgrade?" data-es="¿Listo para Mejorar?">Ready to Upgrade?</h2>
-                    <p data-en="Get in touch to discuss your project" 
-                       data-es="Contáctanos para discutir tu proyecto">
+</div>
+<div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$0</div>
+<div class="pricing-features">
+<ul>
+<li data-en="Find 3 critical vulnerabilities" data-es="Encuentra 3 vulnerabilidades críticas">Find 3 critical vulnerabilities</li>
+<li data-en="Security risk assessment" data-es="Evaluación de riesgos de seguridad">Security risk assessment</li>
+<li data-en="Basic conversion analysis" data-es="Análisis básico de conversión">Basic conversion analysis</li>
+<li data-en="24-hour delivery" data-es="Entrega en 24 horas">24-hour delivery</li>
+<li>Web Hosting — $50 USD/month</li><li>Website Maintenance &amp; Updates — $50 USD/mo</li><li>SEO Boosting — $100 USD</li><li>Social Media Setup &amp; Branding — $75</li><li>Custom Email Setup — $25/account</li><li>Business Logo Design — $75</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#contact">Claim Free Audit</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">Elite Website</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div>
+<div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$50 USD/month</div>
+<div class="pricing-features">
+<ul>
+<li>Fast, secure hosting</li><li>Managed updates</li><li>99.9% uptime</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#">Get Hosting</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">Web Hosting</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div><div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$50/mo USD</div>
+<div class="pricing-features">
+<ul>
+<li>Security patches</li><li>Content edits</li><li>Monthly backups</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#">Subscribe</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">Maintenance &amp; Updates</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div><div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$150 one-time USD</div>
+<div class="pricing-features">
+<ul>
+<li>Keyword setup</li><li>On-page SEO</li><li>Search Console</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#">Improve SEO</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">SEO Optimization</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div><div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$75 USD</div>
+<div class="pricing-features">
+<ul>
+<li>Facebook &amp; Instagram</li><li>Brand visuals</li><li>Profile optimization</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#">Set Up</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">Social Media Setup</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div><div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$25/account USD</div>
+<div class="pricing-features">
+<ul>
+<li>@yourdomain.com</li><li>Device setup help</li><li>Spam protection</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#">Create Email</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">Custom Email Setup</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div><div class="pricing-grid">
+<div class="card pricing-card animate">
+<h3 data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</h3>
+<div class="price">$75 USD</div>
+<div class="pricing-features">
+<ul>
+<li>3 concepts</li><li>Vector files</li><li>Brand-ready exports</li></ul>
+</div>
+<a class="btn btn-primary" data-en="Claim Free Audit" data-es="Obtén tu Auditoría Gratis" href="#">Start Design</a>
+</div>
+<div class="card pricing-card animate delay-1">
+<h3 data-en="Elite Website" data-es="Sitio Web Elite">Logo Design</h3>
+<div class="price">$300 USD</div>
+<div class="pricing-features">
+<ul>
+<li data-en="5-page masterpiece" data-es="Obra maestra de 5 páginas">5-page masterpiece</li>
+<li data-en="Hacker-proof security" data-es="Seguridad a prueba de hackers">Hacker-proof security</li>
+<li data-en="VIP support" data-es="Soporte VIP">VIP support</li>
+<li data-en="Conversion optimization" data-es="Optimización de conversiones">Conversion optimization</li>
+<li data-en="Strategic consultation" data-es="Consulta estratégica">Strategic consultation</li>
+<li data-en="72-hour delivery" data-es="Entrega en 72 horas">72-hour delivery</li>
+</ul>
+</div>
+<a class="btn btn-primary" data-en="Apply Now" data-es="Aplicar Ahora" href="#contact">Apply Now</a>
+</div>
+</div></div>
+</section>
+<!-- Contact Section -->
+<section class="section" id="contact">
+<div class="container">
+<div class="section-header">
+<h2 data-en="Ready to Upgrade?" data-es="¿Listo para Mejorar?">Ready to Upgrade?</h2><div class="upgrade-wrapper"><form data-netlify="true" method="POST" name="contact" netlify=""><input name="form-name" type="hidden" value="contact"/><input name="bot-field" style="display:none" type="text"/>
+<fieldset class="form-group service-options"><legend>Select services (choose all that apply)</legend><div class="service-grid"><label class="checkbox-option" style="display:flex;align-items:center;gap:10px;margin:.35rem 0;"><input name="services[]" type="checkbox" value="elite-website"/><span>Elite Website</span></label><label class="checkbox-option" style="display:flex;align-items:center;gap:10px;margin:.35rem 0;"><input name="services[]" type="checkbox" value="web-hosting"/><span>Web Hosting</span></label><label class="checkbox-option" style="display:flex;align-items:center;gap:10px;margin:.35rem 0;"><input name="services[]" type="checkbox" value="maintenance-updates"/><span>Maintenance &amp; Updates</span></label><label class="checkbox-option" style="display:flex;align-items:center;gap:10px;margin:.35rem 0;"><input name="services[]" type="checkbox" value="seo-optimization"/><span>SEO Optimization</span></label><label class="checkbox-option" style="display:flex;align-items:center;gap:10px;margin:.35rem 0;"><input name="services[]" type="checkbox" value="logo-design"/><span>Logo Design</span></label></div></fieldset><p style="font-size:.95rem;opacity:.85;margin:-6px 0 10px 0;">All prices are in USD.</p><div class="form-group">
+<label data-en="Your Name" data-es="Tu Nombre" for="name">Your Name</label>
+<input class="form-control" id="name" name="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label data-en="Email" data-es="Correo Electrónico" for="email">Email</label>
+<input class="form-control" id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label data-en="Business/Project Name" data-es="Nombre de Empresa/Proyecto" for="business">Business/Project Name</label>
+<input class="form-control" id="business" name="business" type="text"/>
+</div>
+<div class="form-group">
+<label data-en="Service Interested In" data-es="Servicio de Interés" for="service">Service Interested In</label>
+</div>
+<div class="form-group">
+<label data-en="Budget" data-es="Presupuesto" for="budget">Budget</label>
+<input class="form-control" data-en-placeholder="What's your budget for this project?" data-es-placeholder="¿Cuál es tu presupuesto para este proyecto?" id="budget" name="budget" type="text"/>
+</div>
+<div class="form-group">
+<label data-en="Tell us about your business and goals" data-es="Cuéntanos sobre tu negocio y objetivos" for="details">Tell us about your business and goals</label>
+<textarea class="form-control" id="details" name="details" required=""></textarea>
+</div>
+<input name="_subject" type="hidden" value="New LAUNCH ONE Inquiry"/>
+<input id="formLanguage" name="_language" type="hidden" value="en"/>
+<div class="form-actions">
+<button class="btn btn-primary" data-en="SEND REQUEST" data-es="ENVIAR SOLICITUD" type="submit">SEND REQUEST</button>
+<a class="btn btn-whatsapp" href="https://wa.me/5926360468" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp"></i> <span data-en="CHAT INSTEAD" data-es="CHATEAR AHORA">CHAT INSTEAD</span>
+</a>
+<a class="btn btn-secondary" href="mailto:kayleb.sr@gmail.com">EMAIL ME DIRECTLY</a></div>
+</form></div>
+<p data-en="Get in touch to discuss your project" data-es="Contáctanos para discutir tu proyecto">
                         Get in touch to discuss your project
                     </p>
-                </div>
-                
-                <div class="contact-form animate">
-                    <form name="contact" method="POST" netlify>
-                        <div class="form-group">
-                            <label for="name" data-en="Your Name" data-es="Tu Nombre">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" data-en="Email" data-es="Correo Electrónico">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="business" data-en="Business/Project Name" data-es="Nombre de Empresa/Proyecto">Business/Project Name</label>
-                            <input type="text" id="business" name="business" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service" data-en="Service Interested In" data-es="Servicio de Interés">Service Interested In</label>
-                            <select id="service" name="service" class="form-control">
-                                <option value="free-audit" data-en="Free Audit" data-es="Auditoría Gratis">Free Audit</option>
-                                <option value="elite-website" data-en="Elite Website ($3,000+)" data-es="Sitio Web Elite ($3,000+)">Elite Website ($3,000+)</option>
-                                <option value="ecommerce" data-en="E-Commerce Site ($5,000-$10,000)" data-es="Sitio de Comercio Electrónico ($5,000-$10,000)">E-Commerce Site ($5,000-$10,000)</option>
-                                <option value="maintenance" data-en="Monthly Maintenance ($300-$1,000/month)" data-es="Mantenimiento Mensual ($300-$1,000/mes)">Monthly Maintenance ($300-$1,000/month)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="budget" data-en="Budget" data-es="Presupuesto">Budget</label>
-                            <input type="text" id="budget" name="budget" class="form-control" data-en-placeholder="What's your budget for this project?" data-es-placeholder="¿Cuál es tu presupuesto para este proyecto?">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="details" data-en="Tell us about your business and goals" data-es="Cuéntanos sobre tu negocio y objetivos">Tell us about your business and goals</label>
-                            <textarea id="details" name="details" class="form-control" required></textarea>
-                        </div>
-                        
-                        <input type="hidden" name="_subject" value="New LAUNCH ONE Inquiry">
-                        <input type="hidden" name="_language" id="formLanguage" value="en">
-                        
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary" data-en="SEND REQUEST" data-es="ENVIAR SOLICITUD">SEND REQUEST</button>
-                            <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                                <i class="fab fa-whatsapp"></i> <span data-en="CHAT INSTEAD" data-es="CHATEAR AHORA">CHAT INSTEAD</span>
-                            </a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        
-        <!-- CTA Section -->
-        <section class="section" style="background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);">
-            <div class="container text-center">
-                <h2 data-en="Your Digital Presence Is Your Most Powerful Asset" 
-                    data-es="Tu Presencia Digital Es Tu Activo Más Poderoso">
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="section" style="background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);">
+<div class="container text-center">
+<h2 data-en="Your Digital Presence Is Your Most Powerful Asset" data-es="Tu Presencia Digital Es Tu Activo Más Poderoso">
                     Your Digital Presence Is Your Most Powerful Asset
                 </h2>
-                <p class="mb-5" data-en="Elite businesses deserve elite websites. If you're ready to stop leaving money on the table with an outdated or insecure site, let's talk." 
-                   data-es="Los negocios elite merecen sitios web elite. Si estás listo para dejar de perder dinero con un sitio obsoleto o inseguro, hablemos.">
+<p class="mb-5" data-en="Elite businesses deserve elite websites. If you're ready to stop leaving money on the table with an outdated or insecure site, let's talk." data-es="Los negocios elite merecen sitios web elite. Si estás listo para dejar de perder dinero con un sitio obsoleto o inseguro, hablemos.">
                     Elite businesses deserve elite websites. If you're ready to stop leaving money on the table with an outdated or insecure site, let's talk.
                 </p>
-                <div>
-                    <a href="mailto:contact@launchone.com" class="btn btn-primary" data-en="EMAIL US DIRECTLY" data-es="ESCRÍBENOS DIRECTAMENTE">EMAIL US DIRECTLY</a>
-                    <a href="https://wa.me/5926360468" class="btn btn-whatsapp" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> <span data-en="WHATSAPP US" data-es="WHATSAPP">WHATSAPP US</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/5926360468" class="whatsapp-float" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#features" class="footer-link" data-en="Features" data-es="Características">Features</a>
-                <a href="#testimonials" class="footer-link" data-en="Results" data-es="Resultados">Results</a>
-                <a href="#pricing" class="footer-link" data-en="Pricing" data-es="Precios">Pricing</a>
-                <a href="#contact" class="footer-link" data-en="Contact" data-es="Contacto">Contact</a>
-                <a href="mailto:contact@launchone.com" class="footer-link" data-en="Email" data-es="Correo">Email</a>
-            </div>
-            <p class="copyright">© <span id="currentYear"></span> LAUNCH ONE. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-        </div>
-    </footer>
-
-    <script>
+<div>
+<a class="btn btn-primary" data-en="EMAIL US DIRECTLY" data-es="ESCRÍBENOS DIRECTAMENTE" href="mailto:kayleb.sr@gmail.com">EMAIL US DIRECTLY</a>
+<a class="btn btn-whatsapp" href="https://wa.me/5926360468" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp"></i> <span data-en="WHATSAPP US" data-es="WHATSAPP">WHATSAPP US</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- WhatsApp Float -->
+<a class="whatsapp-float" href="https://wa.me/5926360468" rel="noopener" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-links">
+<a class="footer-link" data-en="Features" data-es="Características" href="#features">Features</a>
+<a class="footer-link" data-en="Results" data-es="Resultados" href="#testimonials">Results</a>
+<a class="footer-link" data-en="Pricing" data-es="Precios" href="#pricing">Pricing</a>
+<a class="footer-link" data-en="Contact" data-es="Contacto" href="#contact">Contact</a>
+<a class="footer-link" data-en="Email" data-es="Correo" href="mailto:kayleb.sr@gmail.com">Email</a>
+</div>
+<p class="copyright">© <span id="currentYear"></span> LAUNCH ONE. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+</div>
+</footer>
+<script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1425,8 +1726,8 @@
             // Check if they're applying for elite website with low budget
             if (service === 'elite-website' && budget && parseInt(budget) < 3000) {
                 alert(currentLang === 'es' ? 
-                    "Gracias por tu interés. Solo trabajamos con clientes que invierten en calidad con presupuestos a partir de $3,000. Por favor considera nuestro servicio de Auditoría Gratis si deseas comenzar con algo más pequeño." : 
-                    "Thank you for your interest. We only work with clients who invest in quality with budgets starting at $3,000. Please consider our Free Audit service if you'd like to start smaller.");
+                    "Gracias por tu interés. Solo trabajamos con clientes que invierten en calidad con presupuestos a partir de $300 USD. Por favor considera nuestro servicio de Auditoría Gratis si deseas comenzar con algo más pequeño." : 
+                    "Thank you for your interest. We only work with clients who invest in quality with budgets starting at $300 USD. Please consider our Free Audit service if you'd like to start smaller.");
                 e.preventDefault();
                 return;
             }
