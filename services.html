@@ -6,13 +6,26 @@
   <title>LaunchOne — Premium Websites That Convert</title>
   <meta name="description" content="LaunchOne builds premium, fast websites. Modern design, clean code, deployed on Netlify.">
   <meta property="og:title" content="LaunchOne — Premium Websites That Convert">
-  <meta property="og:description" content="Modern, mobile‑first websites with elite performance.">
+  <meta property="og:description" content="Modern, mobile-first websites with elite performance.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://launchone.org">
   <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="gg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="%23f5d76e"/><stop offset="1" stop-color="%23d4af37"/></linearGradient></defs><rect x="4" y="4" width="56" height="56" rx="14" fill="%230f141b" stroke="%231a212b"/><path d="M20 42l6-16h4l-6 16h-4Z" fill="url(%23gg)"/><path d="M30 42l6-16h10l-2 6h-6l-2 5h6l-2 5H30Z" fill="url(%23gg)"/></svg>' type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Extra helpers for tables and badges */
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 960px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+    table{width:100%;border-collapse:collapse;background:linear-gradient(180deg,var(--card),#0c1117);border:1px solid var(--stroke);border-radius:14px;overflow:hidden}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--stroke);text-align:left}
+    th{background:rgba(255,255,255,.04)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--stroke);margin:3px 4px 0 0;font-size:13px;color:#cbd5e1}
+    .muted{color:var(--muted)}
+    .checklist li{margin:6px 0}
+  </style>
 </head>
 <body>
   <div class="noise"></div>
@@ -31,12 +44,14 @@
         <span>LaunchOne</span>
       </a>
       <nav class="menu" aria-label="Main">
-        <a href="index.html" class="active">Home</a>
-        <a href="services.html">Services</a>
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
         <a href="pricing.html">Pricing</a>
+        <a href="process.html">Process</a>
         <a href="work.html">Work</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
       </nav>
       <a class="btn btn--gold" href="contact.html">Get Started</a>
       <button class="burger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
@@ -44,58 +59,37 @@
       </button>
     </div>
     <div id="mobileMenu" class="mobile-menu" hidden>
-      <a href="index.html" class="active">Home</a>
-        <a href="services.html">Services</a>
+      <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
         <a href="pricing.html">Pricing</a>
+        <a href="process.html">Process</a>
         <a href="work.html">Work</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
       <a class="btn btn--gold" href="contact.html">Get Started</a>
     </div>
   </header>
 
-<section class="hero">
-  <div class="container hero__wrap">
-    <div class="hero__copy reveal">
-      <p class="eyebrow">Premium • Fast • Netlify‑Ready</p>
-      <h1>Websites that look <em>elite</em> and convert.</h1>
-      <p class="sub">Transparent pricing with flexible tiers. We design, build, and launch a modern, mobile‑first site — then keep it fast, secure, and online.</p>
-      <div class="cta">
-        <a class="btn btn--gold" href="pricing.html">See Pricing</a>
-        <a class="btn btn--ghost" href="work.html">See Work</a>
-      </div>
-      <ul class="trust">
-        <li>Blazing‑fast static hosting</li>
-        <li>SEO & on‑page best practices</li>
-        <li>Privacy‑first analytics</li>
-      </ul>
-    </div>
-    <div class="hero__visual reveal">
-      <div class="device">
-        <div class="device__screen">
-          <div class="pulse pulse--one"></div>
-          <div class="pulse pulse--two"></div>
-          <div class="pulse pulse--three"></div>
-          <div class="grid-demo">
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-          </div>
-        </div>
-      </div>
-      <p class="caption">Modern UI • Smooth animations • Clean semantics</p>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
-    <h2 class="section__title reveal">What you get</h2>
-    <div class="cards">
-      <article class="card reveal"><div class="icon">🚀</div><h3>Design that sells</h3><p>Custom, conversion‑focused design with crisp typography and brand consistency.</p></article>
-      <article class="card reveal"><div class="icon">⚡</div><h3>Speed & SEO</h3><p>Static‑optimized pages, image compression, semantic HTML, meta tags, and Open Graph.</p></article>
-      <article class="card reveal"><div class="icon">🔒</div><h3>Secure & reliable</h3><p>Netlify deploys, global CDN, HTTPS, automatic rollbacks, and working forms.</p></article>
-      <article class="card reveal"><div class="icon">🛠️</div><h3>Easy updates</h3><p>GitHub‑connected. Push to update. Or we can maintain it for you.</p></article>
+    <h1 class="section__title reveal">Our Services</h1>
+    <div class="grid cols-3">
+      <article class="card reveal"><h3>Web Design</h3><p>Original layouts, brand systems, and conversion copy. We design with purpose so every section has a job.</p><div><span class="badge">Wireframes</span><span class="badge">UI Kits</span><span class="badge">Design Systems</span></div></article>
+      <article class="card reveal"><h3>Development</h3><p>Clean, semantic HTML/CSS/JS with smooth motion. Static-first for speed; CMS or e‑commerce when needed.</p><div><span class="badge">Static Sites</span><span class="badge">Headless CMS</span><span class="badge">Shopify</span></div></article>
+      <article class="card reveal"><h3>Optimization</h3><p>Core Web Vitals, SEO, and analytics. We monitor, iterate, and ship with measurable improvements.</p><div><span class="badge">CWV</span><span class="badge">SEO</span><span class="badge">A/B tests</span></div></article>
     </div>
+
+    <h2 class="section__title reveal" style="margin-top:32px;">Deliverables by Tier</h2>
+    <table class="reveal">
+      <tr><th>Deliverable</th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+      <tr><td>Custom Design</td><td>✔︎</td><td>✔︎</td><td>✔︎ (advanced)</td></tr>
+      <tr><td>Copy Guidance</td><td>✔︎</td><td>✔︎</td><td>✔︎ + writing</td></tr>
+      <tr><td>Animations</td><td>Light</td><td>Moderate</td><td>Advanced</td></tr>
+      <tr><td>CMS</td><td>—</td><td>Optional</td><td>Included</td></tr>
+      <tr><td>E‑commerce</td><td>—</td><td>Add‑on</td><td>Included</td></tr>
+      <tr><td>Training</td><td>—</td><td>Video handover</td><td>Live session + docs</td></tr>
+    </table>
   </div>
 </section>
 

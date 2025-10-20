@@ -31,12 +31,12 @@
         <span>LaunchOne</span>
       </a>
       <nav class="menu" aria-label="Main">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="pricing.html">Pricing</a>
         <a href="work.html">Work</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
       <a class="btn btn--gold" href="contact.html">Get Started</a>
       <button class="burger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
@@ -44,58 +44,31 @@
       </button>
     </div>
     <div id="mobileMenu" class="mobile-menu" hidden>
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="pricing.html">Pricing</a>
         <a href="work.html">Work</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       <a class="btn btn--gold" href="contact.html">Get Started</a>
     </div>
   </header>
 
-<section class="hero">
-  <div class="container hero__wrap">
-    <div class="hero__copy reveal">
-      <p class="eyebrow">Premium • Fast • Netlify‑Ready</p>
-      <h1>Websites that look <em>elite</em> and convert.</h1>
-      <p class="sub">Transparent pricing with flexible tiers. We design, build, and launch a modern, mobile‑first site — then keep it fast, secure, and online.</p>
-      <div class="cta">
-        <a class="btn btn--gold" href="pricing.html">See Pricing</a>
-        <a class="btn btn--ghost" href="work.html">See Work</a>
-      </div>
-      <ul class="trust">
-        <li>Blazing‑fast static hosting</li>
-        <li>SEO & on‑page best practices</li>
-        <li>Privacy‑first analytics</li>
-      </ul>
+<section class="section section--contact">
+  <div class="container contact">
+    <div class="contact__copy reveal">
+      <h1 class="section__title">Start your build</h1>
+      <p>Email: <a href="mailto:kayleb.sr@gmail.com">kayleb.sr@gmail.com</a> &nbsp;•&nbsp; Message: <a href="sms:+17652640">7652640</a></p>
+      <p>Prefer WhatsApp or Telegram? Mention it in your message and we’ll reach out there.</p>
     </div>
-    <div class="hero__visual reveal">
-      <div class="device">
-        <div class="device__screen">
-          <div class="pulse pulse--one"></div>
-          <div class="pulse pulse--two"></div>
-          <div class="pulse pulse--three"></div>
-          <div class="grid-demo">
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-            <div></div><div></div><div></div><div></div><div></div><div></div>
-          </div>
-        </div>
-      </div>
-      <p class="caption">Modern UI • Smooth animations • Clean semantics</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section__title reveal">What you get</h2>
-    <div class="cards">
-      <article class="card reveal"><div class="icon">🚀</div><h3>Design that sells</h3><p>Custom, conversion‑focused design with crisp typography and brand consistency.</p></article>
-      <article class="card reveal"><div class="icon">⚡</div><h3>Speed & SEO</h3><p>Static‑optimized pages, image compression, semantic HTML, meta tags, and Open Graph.</p></article>
-      <article class="card reveal"><div class="icon">🔒</div><h3>Secure & reliable</h3><p>Netlify deploys, global CDN, HTTPS, automatic rollbacks, and working forms.</p></article>
-      <article class="card reveal"><div class="icon">🛠️</div><h3>Easy updates</h3><p>GitHub‑connected. Push to update. Or we can maintain it for you.</p></article>
-    </div>
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact__form reveal">
+      <input type="hidden" name="form-name" value="quote" />
+      <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+      <label><span>Your name</span><input type="text" name="name" required placeholder="Your full name"></label>
+      <label><span>Email</span><input type="email" name="email" required placeholder="you@example.com"></label>
+      <label><span>Tell us about your project</span><textarea name="message" rows="5" placeholder="What do you do? Any references or goals?"></textarea></label>
+      <button class="btn btn--gold" type="submit">Request a quote</button>
+    </form>
   </div>
 </section>
 

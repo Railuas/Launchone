@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LaunchOne — Premium Websites That Convert</title>
+  <meta name="description" content="LaunchOne builds premium, fast websites. Modern design, clean code, deployed on Netlify.">
+  <meta property="og:title" content="LaunchOne — Premium Websites That Convert">
+  <meta property="og:description" content="Modern, mobile-first websites with elite performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://launchone.org">
+  <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><defs><linearGradient id="gg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="%23f5d76e"/><stop offset="1" stop-color="%23d4af37"/></linearGradient></defs><rect x="4" y="4" width="56" height="56" rx="14" fill="%230f141b" stroke="%231a212b"/><path d="M20 42l6-16h4l-6 16h-4Z" fill="url(%23gg)"/><path d="M30 42l6-16h10l-2 6h-6l-2 5h6l-2 5H30Z" fill="url(%23gg)"/></svg>' type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Extra helpers for tables and badges */
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 960px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+    table{width:100%;border-collapse:collapse;background:linear-gradient(180deg,var(--card),#0c1117);border:1px solid var(--stroke);border-radius:14px;overflow:hidden}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--stroke);text-align:left}
+    th{background:rgba(255,255,255,.04)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--stroke);margin:3px 4px 0 0;font-size:13px;color:#cbd5e1}
+    .muted{color:var(--muted)}
+    .checklist li{margin:6px 0}
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="LaunchOne home">
+        <svg class="logo" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f5d76e"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          <rect x="4" y="4" width="56" height="56" rx="12" fill="#0f141b" stroke="#1a212b"></rect>
+          <path d="M18 40l6-16h4l-6 16h-4Z" fill="url(#g)"></path>
+          <path d="M30 40l6-16h10l-2 6h-6l-1.8 4.8h6L40 40H30Z" fill="url(#g)"></path>
+          <circle cx="16" cy="46" r="2" fill="#f5d76e"></circle>
+          <circle cx="48" cy="18" r="2" fill="#f5d76e"></circle>
+        </svg>
+        <span>LaunchOne</span>
+      </a>
+      <nav class="menu" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="process.html">Process</a>
+        <a href="work.html">Work</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+      <a class="btn btn--gold" href="contact.html">Get Started</a>
+      <button class="burger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="process.html">Process</a>
+        <a href="work.html">Work</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      <a class="btn btn--gold" href="contact.html">Get Started</a>
+    </div>
+  </header>
+
+<section class="section section--alt">
+  <div class="container">
+    <h1 class="section__title reveal">Packages & Pricing</h1>
+    <p class="muted reveal">Straightforward packages with transparent deliverables. Upgrade or add features any time.</p>
+
+    <div class="pricing">
+      <div class="price-card reveal">
+        <h3>Basic Site</h3>
+        <p class="price"><span class="currency">$</span>500<span class="once"> one-time</span></p>
+        <ul>
+          <li>1 landing page (up to 5 sections)</li>
+          <li>Responsive + accessible</li>
+          <li>Conversion-focused copy guidance</li>
+          <li>Performance & SEO pass</li>
+          <li>Netlify deploy + forms</li>
+        </ul>
+        <a class="btn btn--gold" href="contact.html">Start Basic</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Standard Site</h3>
+        <p class="price"><span class="currency">$</span>900<span class="once"> one-time</span></p>
+        <ul>
+          <li>Up to 5 pages</li>
+          <li>Brand-aligned visual system</li>
+          <li>Tasteful animations & micro‑interactions</li>
+          <li>SEO setup + privacy-friendly analytics</li>
+          <li>Netlify forms + 3rd‑party integrations</li>
+        </ul>
+        <a class="btn btn--gold" href="contact.html">Start Standard</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Premium Site</h3>
+        <p class="price"><span class="currency">$</span>1800<span class="once">+ one-time</span></p>
+        <ul>
+          <li>10+ pages or custom components</li>
+          <li>Advanced motion/sections</li>
+          <li>Headless CMS or e‑commerce</li>
+          <li>Content modelling & migrations</li>
+          <li>Priority support + training</li>
+        </ul>
+        <a class="btn btn--gold" href="contact.html">Start Premium</a>
+      </div>
+    </div>
+
+    <h2 class="section__title reveal" style="margin-top:40px;">Hosting & Maintenance</h2>
+    <div class="pricing">
+      <div class="price-card reveal">
+        <h3>Essentials</h3>
+        <p class="price"><span class="currency">$</span>79<span class="once"> / month</span></p>
+        <ul>
+          <li>Netlify hosting + global CDN</li>
+          <li>SSL, backups, uptime monitoring</li>
+          <li>2 minor content edits / mo</li>
+          <li>Email support (48h)</li>
+        </ul>
+        <a class="btn btn--ghost" href="contact.html">Choose Essentials</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Growth</h3>
+        <p class="price"><span class="currency">$</span>129<span class="once"> / month</span></p>
+        <ul>
+          <li>Everything in Essentials</li>
+          <li>6 minor edits / mo</li>
+          <li>Monthly performance & SEO checks</li>
+          <li>Support response (24h)</li>
+        </ul>
+        <a class="btn btn--ghost" href="contact.html">Choose Growth</a>
+      </div>
+      <div class="price-card reveal">
+        <h3>Managed</h3>
+        <p class="price"><span class="currency">$</span>199<span class="once"> / month</span></p>
+        <ul>
+          <li>Unlimited minor edits</li>
+          <li>Quarterly strategy reviews</li>
+          <li>Advanced monitoring & alerts</li>
+          <li>Priority support (same‑day)</li>
+        </ul>
+        <a class="btn btn--ghost" href="contact.html">Choose Managed</a>
+      </div>
+    </div>
+
+    <div class="grid cols-2" style="margin-top:40px;">
+      <div class="card reveal">
+        <h3>Add‑ons</h3>
+        <table>
+          <tr><th>Feature</th><th>From</th></tr>
+          <tr><td>Blog / Headless CMS (content model + 5 templates)</td><td>$400</td></tr>
+          <tr><td>Booking / Calendars integration</td><td>$200</td></tr>
+          <tr><td>E‑commerce (up to 20 SKUs; Shopify/Stripe)</td><td>$600</td></tr>
+          <tr><td>Copywriting (per page)</td><td>$80</td></tr>
+          <tr><td>Brand kit (logo tune, palette, typography)</td><td>$250</td></tr>
+          <tr><td>Speed audit + Core Web Vitals fix</td><td>$300</td></tr>
+          <tr><td>Migration from WordPress/Wix</td><td>$300</td></tr>
+        </table>
+        <p class="muted">Need something not listed? We’ll scope it in your quote.</p>
+      </div>
+      <div class="card reveal">
+        <h3>What’s Included</h3>
+        <ul class="checklist">
+          <li>Conversion-focused layout & messaging</li>
+          <li>Mobile-first design + accessibility best practices</li>
+          <li>On-page SEO (titles, meta, OG tags, sitemap)</li>
+          <li>Performance optimization (images, code, caching)</li>
+          <li>Netlify deploys, rollbacks, and forms</li>
+          <li>Privacy-first analytics setup</li>
+          <li>Launch checklist & handover docs</li>
+        </ul>
+        <div style="margin-top:8px">
+          <span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JS</span>
+          <span class="badge">Netlify</span><span class="badge">GitHub</span><span class="badge">Stripe</span>
+          <span class="badge">Shopify</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:16px;">
+      <h3>Payment & Revisions</h3>
+      <ul class="checklist">
+        <li>50% deposit to kick off, 50% on pre‑launch preview</li>
+        <li>Basic: up to 2 revision rounds; Standard/Premium: up to 3</li>
+        <li>Additional revisions billed hourly ($40/hr)</li>
+        <li>Ownership: you own your code/content after final payment</li>
+      </ul>
+    </div>
+
+    <div class="card reveal" style="margin-top:16px;">
+      <h3>Service Level Targets</h3>
+      <table>
+        <tr><th>Plan</th><th>Response</th><th>Uptime target</th><th>Change window</th></tr>
+        <tr><td>Essentials</td><td>48h</td><td>99.9%</td><td>Weekly</td></tr>
+        <tr><td>Growth</td><td>24h</td><td>99.95%</td><td>Twice weekly</td></tr>
+        <tr><td>Managed</td><td>Same‑day</td><td>99.95%+</td><td>As needed</td></tr>
+      </table>
+    </div>
+
+    <div class="card reveal" style="margin-top:16px;">
+      <h3>Which package is right for me?</h3>
+      <table>
+        <tr><th></th><th>Basic</th><th>Standard</th><th>Premium</th></tr>
+        <tr><td>Pages</td><td>1 (5 sections)</td><td>Up to 5</td><td>10+ / custom</td></tr>
+        <tr><td>Motion</td><td>Light</td><td>Moderate</td><td>Advanced</td></tr>
+        <tr><td>Integrations</td><td>Contact form</td><td>Forms + basic tools</td><td>CMS / Shop / APIs</td></tr>
+        <tr><td>Best for</td><td>New launch / validation</td><td>Growing local business</td><td>Scaling brand / online sales</td></tr>
+      </table>
+    </div>
+
+    <div class="cta" style="margin-top:24px">
+      <a class="btn btn--gold" href="contact.html">Get a custom quote</a>
+      <a class="btn btn--ghost" href="process.html">See the process</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <div class="left">
+        <svg class="logo small" viewBox="0 0 64 64" width="24" height="24" aria-hidden="true">
+          <defs><linearGradient id="g2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f5d76e"/><stop offset="1" stop-color="#d4af37"/></linearGradient></defs>
+          <rect x="4" y="4" width="56" height="56" rx="12" fill="#0f141b" stroke="#1a212b"></rect>
+          <path d="M18 40l6-16h4l-6 16h-4Z" fill="url(#g2)"></path>
+          <path d="M30 40l6-16h10l-2 6h-6l-1.8 4.8h6L40 40H30Z" fill="url(#g2)"></path>
+        </svg>
+        <span>© <span id="year"></span> LaunchOne. All rights reserved.</span>
+      </div>
+      <div class="right">
+        <span>Powered by LaunchOne</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
